@@ -1,0 +1,21 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Teleport : MonoBehaviour {
+
+	public GameObject player;
+	public Transform target;
+
+	void OnTriggerEnter(Collider other)
+	{
+		//Trigger win function
+		if (other.tag == "teleportx") {
+			player = other.transform.gameObject;
+			//player = other.transform.parent.gameObject.transform.parent.gameObject;
+			player.transform.position = target.transform.position;
+		}
+
+	}
+
+}
